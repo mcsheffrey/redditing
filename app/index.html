@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="sample">
+<head>
+  <meta charset="utf-8">
+
+  <!-- could easily use a custom property of the state here instead of 'name' -->
+  <title ng-bind="$state.current.name + ' - ui-router'">ui-router</title>
+  
+   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7658032/754382/css/fonts.css" />
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+
+   <div class="title"><span class="search_area">
+            <input id="search" type="text" placeholder="" />
+            <span class="search-r">R/</span>
+            <div id="results"></div>
+        </span>
+        </div>
+  <div class="container" style="margin-top:60px" ui-view ng-animate="{show: 'fadeIn', hide:'fadeOut'}"></div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="lib/jquery-1.10.2.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-ui-router.js"></script>
+  <script src="lib/angular/ng-infinite-scroll.js"></script>
+  <script src="lib/showdown.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>

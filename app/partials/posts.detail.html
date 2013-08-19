@@ -1,0 +1,56 @@
+<div class="post-details-container" id="post-details-container">
+	<div class="spinner"></div>
+	<div class="post-details">
+		<h2>{{postDetails.title}}</h2>
+		<span class="num-comments">{{postDetails.num_comments}}</span>
+    <span class='score'>{{postDetails.score}}</span>
+    <div ng-bind-html-unsafe="postDetails.url | thumb"></div>
+    <div ng-bind-html-unsafe="postDetails.selftext | markdown"></div>
+		<hr>
+		<div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1' infinite-scroll-container='"#post-details-container"'>
+		  	<div ng-repeat='comment in comments'>
+
+		  	<span class="comment-author">{{comment.author}} <span class="ups">{{comment.ups}}</span></span>
+			  <div ng-bind-html-unsafe="comment.body | markdown"></div>
+
+			  	<div ng-if='comment.replies'>
+				  	<div style="padding-left: 20px; border-left: 1px solid rgba(229, 229, 229, 0.5);" ng-repeat='comment in comment.replies.data.children'>
+				  		<span class="comment-author">{{comment.data.author}} <span class="ups">{{comment.data.ups}}</span></span>
+					  	<div ng-bind-html-unsafe="comment.data.body | markdown"></div>
+
+					  	<div ng-if='comment.data.replies'>
+						  	<div style="padding-left: 20px; border-left: 1px solid rgba(229, 229, 229, 0.5);" ng-repeat='comment in comment.data.replies.data.children'>
+						  		<span class="comment-author">{{comment.data.author}} <span class="ups">{{comment.data.ups}}</span></span>
+							  	<div ng-bind-html-unsafe="comment.data.body | markdown"></div>
+
+							  	<div ng-if='comment.data.replies'>
+								  	<div style="padding-left: 20px; border-left: 1px solid rgba(229, 229, 229, 0.5);" ng-repeat='comment in comment.data.replies.data.children'>
+								  		<span class="comment-author">{{comment.data.author}} <span class="ups">{{comment.data.ups}}</span></span>
+									  	<div ng-bind-html-unsafe="comment.data.body | markdown"></div>
+
+									  	<div ng-if='comment.data.replies'>
+										  	<div style="padding-left: 20px; border-left: 1px solid rgba(229, 229, 229, 0.5);" ng-repeat='comment in comment.data.replies.data.children'>
+										  		<span class="comment-author">{{comment.data.author}} <span class="ups">{{comment.data.ups}}</span></span>
+											  	<div ng-bind-html-unsafe="comment.data.body | markdown"></div>
+
+											  	<div ng-if='comment.data.replies'>
+												  	<div style="padding-left: 20px; border-left: 1px solid rgba(229, 229, 229, 0.5);" ng-repeat='comment in comment.data.replies.data.children'>
+												  		<span class="comment-author">{{comment.data.author}} <span class="ups">{{comment.data.ups}}</span></span>
+													  	<div ng-bind-html-unsafe="comment.data.body | markdown"></div>
+
+													  	
+												  	</div>
+											  	</div>
+										  	</div>
+									  	</div>
+								  	</div>
+							  	</div>
+						  	</div>
+					  	</div>
+				  	</div>
+			  	</div>
+			</div>
+		</div>
+		<div ui-view ng-animate="{show: 'fadeIn', hide:'fadeOut'}"></div>
+	</div>
+</div>
