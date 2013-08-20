@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('sample', ['ui.compat', 'infinite-scroll', 'sample.filters'])
+var Redditing = angular.module('Redditing', ['ui.compat', 'infinite-scroll', 'Redditing.filters'])
 	.config(
 	['$stateProvider', '$routeProvider', '$urlRouterProvider',
 	function ($stateProvider,   $routeProvider,   $urlRouterProvider) {

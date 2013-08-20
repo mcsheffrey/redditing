@@ -766,11 +766,33 @@ text-transform: uppercase;
 .post {
     border-bottom: 1px solid #e5e5e5;
     padding: 20px;
+    position: relative;
 }
 
-.post:hover {
+.post.active {
     border: 5px solid #e5e5e5;
     padding: 15px;
+}
+
+.nsfw-text {
+    display: none;
+}
+
+.post.nsfw img {
+    opacity: .05;
+}
+
+.post.nsfw .nsfw-text {
+    display: inline-block;
+    color: #FE4100;
+    font-size: 12px;
+    letter-spacing: .1em;
+   text-transform: uppercase;
+font-weight: 600;
+position: absolute;
+left: 50%;
+bottom: 40%;
+margin-left: -22px;
 }
 
 .post h2 {

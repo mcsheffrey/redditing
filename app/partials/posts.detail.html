@@ -4,12 +4,14 @@
 		<h2>{{postDetails.title}}</h2>
 		<span class="num-comments">{{postDetails.num_comments}}</span>
     <span class='score'>{{postDetails.score}}</span>
-    <div ng-bind-html-unsafe="postDetails.url | thumb"></div>
+    <imgur-album location="{{postDetails.url}}" ng-show="postDetails.url != ''"></imgur-album>
+    
     <div ng-bind-html-unsafe="postDetails.selftext | markdown"></div>
+    
 		<hr>
 		<div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1' infinite-scroll-container='"#post-details-container"'>
 		  	<div ng-repeat='comment in comments'>
-
+		  	<!-- Check if comment author == post details author -->
 		  	<span class="comment-author">{{comment.author}} <span class="ups">{{comment.ups}}</span></span>
 			  <div ng-bind-html-unsafe="comment.body | markdown"></div>
 
