@@ -756,7 +756,6 @@ text-transform: uppercase;
     display: inline-block;
     float: left;
     width: 600px;
-    border-left: 5px solid #000;
     border-right: 1px solid #e5e5e5;
     margin-bottom: 50px;
     position: relative;
@@ -793,6 +792,14 @@ position: absolute;
 left: 50%;
 bottom: 40%;
 margin-left: -22px;
+}
+
+.post.active.nsfw img {
+    opacity: 1;
+}
+
+.post.active.nsfw .nsfw-text {
+    display: none;
 }
 
 .post h2 {
@@ -866,6 +873,11 @@ margin-left: -22px;
     letter-spacing: .1em;
     position: relative;
     z-index: 2;
+}
+
+.post-details h2 a {
+    color: #222;
+    text-decoration: none;
 }
 
 .post-details p {

@@ -51,7 +51,7 @@ angular.module('Redditing.filters', []).
   
     if (isYoutube(text)) {
       var youtubeID = text.replace(/^[^v]+v.(.{11}).*/,"$1");
-      return '<div class="video" style="width: 640px; height: 360px; overflow: hidden; position: relative;"><iframe frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" width="640" height="360" style="position: absolute; top: 0px; left: 0px; width: 640px; height: 360px;" src="http://youtube.com/embed/'+youtubeID+'?loop=1&amp;hd=1&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;playlist='+youtubeID+'"></iframe></div>'
+      return '<div class="video" style="width: 100%; height: 312px; overflow: hidden; position: relative;"><iframe frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" src="http://youtube.com/embed/'+youtubeID+'?loop=1&amp;hd=1&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;playlist='+youtubeID+'"></iframe></div>'
     }
 
     if(isImgur) {
