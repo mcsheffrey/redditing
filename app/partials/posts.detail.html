@@ -1,14 +1,13 @@
 <div class="post-details-container" id="post-details-container">
 	<div class="spinner"></div>
 	<div class="post-details">
-		<h2>{{postDetails.title}}</h2>
+		<h2><a href="{{postDetails.url}}" target="_blank">{{postDetails.title}}</a></h2>
 		<span class="num-comments">{{postDetails.num_comments}}</span>
     <span class='score'>{{postDetails.score}}</span>
     <imgur-album location="{{postDetails.url}}" ng-show="postDetails.url != ''"></imgur-album>
     
     <div ng-bind-html-unsafe="postDetails.selftext | markdown"></div>
-    
-		<hr>
+
 		<div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1' infinite-scroll-container='"#post-details-container"'>
 		  	<div ng-repeat='comment in comments'>
 		  	<!-- Check if comment author == post details author -->

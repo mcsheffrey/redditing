@@ -8,7 +8,7 @@
             <h2>{{post.title}}</h2>
             <span class="num-comments">{{post.num_comments}}</span>
             <span class='score'>{{post.score}}</span>
-            <!-- <div ng-bind-html-unsafe="post.url | thumb"></div> -->
+            <div ng-bind-html-unsafe="post.url | thumb"></div>
             <imgur-album location="{{post.url}}" ng-show="post.url != ''"></imgur-album>
           
           </a>
