@@ -884,6 +884,10 @@ margin-left: -22px;
   margin: .25em 0 .5em 0;
 }
 
+.post-details a {
+    color: #222;
+}
+
 .comment-author {
   color: rgba(0, 0, 0, 0.77);
   font-weight: 600;
